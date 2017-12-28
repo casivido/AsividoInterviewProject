@@ -4,17 +4,29 @@
 
     <div class="jumbotron">
         <h1>Occupational Search</h1>
-        <div class="col">
-            <div class="form-horizontal">
-                <label for="inputOccupation">Occupation:</label>
-                <input type="search" class="form-control" id="inputOccupation" value="Computer Programmers" disabled>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-horizontal">
+                    <label for="inputOccupation">Occupation:</label>
+                    <input type="search" class="form-control" id="inputOccupation" value="Computer Programmers" disabled>
+                </div>
+                <div class="form-horizontal">
+                    <label for="inputRegion">Region:</label>    
+                    <input type="search" class="form-control" id="inputRegion" value="Seattle-Tacoma-Bellevue, WA" disabled>
+                </div>
+                <p class="lead"></p>
+                <p><a runat="server" href="~/Overview" class="btn btn-success btn-lg">Go &raquo;</a></p>
             </div>
-            <div class="form-horizontal">
-                <label for="inputRegion">Region:</label>    
-                <input type="search" class="form-control" id="inputRegion" value="Seattle-Tacoma-Bellevue, WA" disabled>
+            <div class="col-md-5">
+                <h3>Find The Information You Need</h3>
+                <h5><strong>
+                    &#8226 Number of Jobs<br /><br />
+                    &#8226 Hourly Earnings<br /><br />
+                    &#8226 Job Growth<br /><br />
+                    &#8226 Surrounding Industries<br /><br />
+                    &#8226 National Average Comparisons<br />
+                    </strong></h5>
             </div>
-            <p class="lead"></p>
-            <p><a runat="server" href="~/Overview" class="btn btn-success btn-lg">Go &raquo;</a></p>
         </div>
     </div>
 

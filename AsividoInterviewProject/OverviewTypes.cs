@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿
 
+// Defines structs used in JSON file formats
+// Lowercase and public attributes are necessary for file reading.
 namespace AsividoInterviewProject
 {
     public struct Occupation

@@ -14,16 +14,16 @@
             <p><strong>Jobs(<%: _Overview.summary.jobs.year %>)</strong></p>
             <p>
                 <%: (int)(((double)_Overview.summary.jobs.regional / _Overview.summary.jobs.national_avg)*100)%>%
-                <%=ColorNumber((int)(((double)_Overview.summary.jobs.regional / _Overview.summary.jobs.national_avg)*100)-100,"above","below") %> National Average
+                <%=ColorText((int)(((double)_Overview.summary.jobs.regional / _Overview.summary.jobs.national_avg)*100)-100,"above","below") %> National Average
             </p>
         </div>
         <div class="col-md-4" style="border-right: solid 1px #dbdbdb">
-            <h2><%= ColorNumber(_Overview.summary.jobs_growth.regional, "+" + _Overview.summary.jobs_growth.regional.ToString("#.0") + "%") %></h2>
+            <h2><%= ColorText(_Overview.summary.jobs_growth.regional, "+" + _Overview.summary.jobs_growth.regional.ToString("#0.0") + "%") %></h2>
             <p><strong>% Change(<%: _Overview.summary.jobs_growth.start_year + "-" + _Overview.summary.jobs_growth.end_year %>)</strong></p>
-            <p>Nation:<%= ColorNumber(_Overview.summary.jobs_growth.national_avg, "+" + _Overview.summary.jobs_growth.national_avg.ToString("#.0") + "%") %></p>
+            <p>Nation:<%= ColorText(_Overview.summary.jobs_growth.national_avg, "+" + _Overview.summary.jobs_growth.national_avg.ToString("#0.0") + "%") %></p>
         </div>
         <div class="col-md-4">
-            <h2><%: _Overview.summary.earnings.regional.ToString("c2") %>/hr <%= ColorNumber(_Overview.summary.earnings.regional-_Overview.summary.earnings.national_avg, "<span class=\"glyphicon glyphicon-arrow-up\"></span>", "<span class=\"glyphicon glyphicon-arrow-down\"></span>") %></h2>
+            <h2><%: _Overview.summary.earnings.regional.ToString("c2") %>/hr <%= ColorText(_Overview.summary.earnings.regional-_Overview.summary.earnings.national_avg, "<span class=\"glyphicon glyphicon-arrow-up\"></span>", "<span class=\"glyphicon glyphicon-arrow-down\"></span>") %></h2>
             <p><strong>Median Hourly Earnings</strong></p>
             <p>Nation: <%: _Overview.summary.earnings.national_avg.ToString("c2") %>/hr</p>
         </div>
@@ -50,21 +50,21 @@
                 <td><%: _Overview.trend_comparison.regional[0].ToString("N0") %></td>
                 <td><%: _Overview.trend_comparison.regional[_Overview.trend_comparison.regional.Length-1].ToString("N0") %></td>
                 <td><%: (_Overview.trend_comparison.regional[_Overview.trend_comparison.regional.Length-1] - _Overview.trend_comparison.regional[0]).ToString("N0") %></td>
-                <td><%: (((double)(_Overview.trend_comparison.regional[_Overview.trend_comparison.regional.Length-1] - _Overview.trend_comparison.regional[0])/_Overview.trend_comparison.regional[0])*100).ToString("00.0") %>%</td>
+                <td><%: (((double)(_Overview.trend_comparison.regional[_Overview.trend_comparison.regional.Length-1] - _Overview.trend_comparison.regional[0])/_Overview.trend_comparison.regional[0])*100).ToString("#0.0") %>%</td>
             </tr>
             <tr>
                 <td style="width: 700px; height: 37px;">State</td>
                 <td style="height: 37px"><%: _Overview.trend_comparison.state[0].ToString("N0") %></td>
                 <td style="height: 37px"><%: _Overview.trend_comparison.state[_Overview.trend_comparison.state.Length-1].ToString("N0") %></td>
                 <td style="height: 37px"><%: (_Overview.trend_comparison.state[_Overview.trend_comparison.state.Length-1] - _Overview.trend_comparison.state[0]).ToString("N0") %></td>
-                <td style="height: 37px"><%: (((double)(_Overview.trend_comparison.state[_Overview.trend_comparison.state.Length-1] - _Overview.trend_comparison.state[0])/_Overview.trend_comparison.state[0])*100).ToString("#.0") %>%</td>
+                <td style="height: 37px"><%: (((double)(_Overview.trend_comparison.state[_Overview.trend_comparison.state.Length-1] - _Overview.trend_comparison.state[0])/_Overview.trend_comparison.state[0])*100).ToString("#0.0") %>%</td>
             </tr>
             <tr>
                 <td style="width: 700px">Nation</td>
                 <td><%: _Overview.trend_comparison.nation[0].ToString("N0") %></td>
                 <td><%: _Overview.trend_comparison.nation[_Overview.trend_comparison.nation.Length-1].ToString("N0") %></td>
                 <td><%: (_Overview.trend_comparison.nation[_Overview.trend_comparison.nation.Length-1] - _Overview.trend_comparison.nation[0]).ToString("N0") %></td>
-                <td><%: (((double)(_Overview.trend_comparison.nation[_Overview.trend_comparison.nation.Length-1] - _Overview.trend_comparison.nation[0])/_Overview.trend_comparison.nation[0])*100).ToString("#.0") %>%</td>
+                <td><%: (((double)(_Overview.trend_comparison.nation[_Overview.trend_comparison.nation.Length-1] - _Overview.trend_comparison.nation[0])/_Overview.trend_comparison.nation[0])*100).ToString("#0.0") %>%</td>
             </tr>
         </tbody>
     </table>
@@ -90,8 +90,8 @@
                     <tr>
                         <td style="color:DodgerBlue;"><span class="glyphicon glyphicon-briefcase"></span> <%= industry.title %></td>
                         <td><%= industry.in_occupation_jobs %></td>
-                        <td><%= (((double)industry.in_occupation_jobs/ _Overview.employing_industries.jobs)*100).ToString("#.0") %>%</td>
-                        <td><%= (((double)industry.in_occupation_jobs / industry.jobs)*100).ToString("#.0") %>%</td>
+                        <td><%= (((double)industry.in_occupation_jobs/ _Overview.employing_industries.jobs)*100).ToString("#0.0") %>%</td>
+                        <td><%= (((double)industry.in_occupation_jobs / industry.jobs)*100).ToString("#0.0") %>%</td>
                     </tr>
             <% } %>
         </tbody>

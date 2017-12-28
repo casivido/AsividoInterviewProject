@@ -144,6 +144,7 @@
     <Content Include="Overview.aspx" />
     <Content Include="Summary.aspx" />
     <Content Include="App_Data\ProjectSampleReponse.json" />
+    <None Include="Properties\PublishProfiles\AsividoInterviewProject - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
