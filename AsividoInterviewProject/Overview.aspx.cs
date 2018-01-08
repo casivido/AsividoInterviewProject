@@ -9,8 +9,6 @@ namespace AsividoInterviewProject
     // Overview page code-behind to use a GET Request to create an Occupation Overview
     public partial class OverviewEngine : System.Web.UI.Page
     {
-        private string _JSON_Filename;
-
         protected Occupation_Overview _Overview;
 
 
